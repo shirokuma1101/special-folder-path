@@ -2,6 +2,7 @@
 
 # standard
 import os
+from copy import deepcopy
 
 
 class SpecialFolderPath:
@@ -31,7 +32,7 @@ class SpecialFolderPath:
             for k in cls._SPECIAL_FOLDER.keys():
                 paths.append(cls._get(k))
             return paths
-    
+
     @classmethod
     def get_with_keys(cls):
         path = {}
@@ -41,7 +42,7 @@ class SpecialFolderPath:
 
     @classmethod
     def get_dict(cls):
-        return cls._SPECIAL_FOLDER
+        return deepcopy(cls._SPECIAL_FOLDER)
 
 
     # private
@@ -101,10 +102,18 @@ class SpecialFolderPath:
 
 
 def main():
+    # debug
     from pprint import pprint
+
+    # get all paths
     pprint(SpecialFolderPath.get())
+    # get my pictures path
     pprint(SpecialFolderPath.get('MyPictures'))
+    # get all paths with keys
     pprint(SpecialFolderPath.get_with_keys())
+    # get dict of special folders and set values
+    SpecialFolderPath.get_dict()['AdminTools'] = 0
+    # get dict of special folders
     pprint(SpecialFolderPath.get_dict())
 
 

@@ -1,14 +1,17 @@
-from importlib.metadata import entry_points
-from setuptools import setup
+# -*- coding: UTF-8 -*-
+
+# setup
+from setuptools import setup, find_packages
+
 
 setup(
     name='specialfolderpath',
     version='1.0',
     description='Get the path of a special folder',
-    entry_points={
-        'console_scripts': [
-            'special_folder_path = specialfolderpath.special_folder_path:main',
-        ]
-    }
+
+    author='shirokuma1101',
+
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
 )
 
