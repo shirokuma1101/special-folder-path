@@ -14,7 +14,7 @@ pip install .
 ## Easy Usage
 
 ```python
-from SpecialFolderPath import special_folder_path as sfp
+from specialfolderpath import SpecialFolderPath as sfp
 sfp.get()
 ```
 
