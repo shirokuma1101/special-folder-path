@@ -5,10 +5,8 @@ powershellで.NET Frameworkを利用して特殊フォルダパスを取得
 ## Install
 
 ```
-mkdir special-folder-path
-cd special-folder-path
 git clone https://github.com/shirokuma1101/special-folder-path.git
-pip install .
+pip install special-folder-path/
 ```
 
 ## Easy Usage
@@ -20,7 +18,7 @@ sfp.get()
 
 ## Methods
 
-※実行速度は1パスあたり0.18~0.20s(全てのパスを取得した場合は約10s)とかなり低速です。<br>
+※実行速度は1パス取得/0.18~0.20s(全てのパスを取得した場合は約10s)とかなり低速です。<br>
 ループ処理などで利用する場合は注意が必要です。
 
 ### 全ての特殊フォルダのパスを取得
@@ -41,7 +39,7 @@ pprint(sfp.get('MyPictures')) # pprint(sfp.get(39)) と同意
 pprint(sfp.get_with_keys())
 ```
 
-### 辞書の変更は反映されない
+### 辞書の直接の変更はできません
 
 ```python
 sfp.get_dict()['AdminTools'] = 0
